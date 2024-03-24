@@ -1,23 +1,20 @@
-// memanipulasi array 
+//Sequetuial search 
 
 #include <stdio.h>
 #include <conio.h>
 
-int nilai[5],i;
+int data[8]={8,10,6,-2,11,7,1,100};
+int i,cari,flag=0;
 
 int main (){
 	
-	printf("masukkan elemen 1 = ");
-	scanf("%i",&nilai[0]);
-	
-	nilai[1]=5;
-	nilai[2]=nilai[1]+10;
-	
-	for(i = 3; i < 5; i++){
-	nilai[i]=i*10;
+	printf("masukkan data yang ingin dicari =  ");
+	scanf("%i",&cari);
+	for (i = 0; i < 8; i++){
+	if (data[i] == cari) flag = 1;	
 	}
-	for(i = 0; i < 5; i++){
-	printf("bilangan indexs ke %i = %i \n",i,nilai[i]);		
-	}
+	if (flag == 1) printf("data ada");
+	else printf("data tidak ada");
+	
 getch();	
 }
