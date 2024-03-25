@@ -1,0 +1,19 @@
+//Versi 1
+void bubble_sort(){
+for(int i=1;i<n;i++){
+for(int j=n-1;j>=i;j--){
+if(data[j]<data[j-1]) tukar(&data[j],&data[j-1]);
+//ascending
+}
+}
+}
+
+//Versi 2
+void bubblesort2(){
+for(i=1;i<n;i++){
+for(int j=0;j<n-i;j++){
+if(data[j]<data[j+1])
+tukar(&data[j],&data[j+1]); //ascending
+}
+}
+}
