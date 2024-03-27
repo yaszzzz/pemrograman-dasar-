@@ -1,39 +1,41 @@
+// selection sort 
 #include <stdio.h>
 #include <conio.h>
 
-int data[6], n, i, j, tukar, temp;
+int data[6],n,i,j,tukar,pos;
 
 int main(){
+    printf("masukkan jumlah angka : ");
+    scanf("%i",&n);
 
-    printf("masukkan jumlah angka = ");
-    scanf("%i", &n);
-    for (i=0;i<n;i++){
-        printf("angka ke-%i = ", i+1);
+    for(i=0;i<n;i++){
+        printf("angka indeks ke : %i ", i);
         scanf("%i",&data[i]);
     }
-    printf("data yang akan diurutkan = ");
-    for(i=0;i<n;i++){
-        printf("%i ",data[i]);
+    printf("data yang akan diurutkan : ");
+    for (i=0;i<n;i++){
+        printf("%i",data[i]);
     }
-    //Metode Insertion Sort
-
-    for(i=1;i<n;i++){
-        temp=data[i];
-        j=i-1;
-        while(data[j]>temp && j>=0){
-            data[j+1]=data[j];
-            j--;
+// metode selection 
+    for(i=0;i<n;i++){
+        pos=i;
+        for( j=i+1;j<n;j++){
+            if (data[j]<data[pos])
+            pos = j;
         }
-
-        data[j+1]=temp;
-        printf("\nproses ke-%i = ", i);
-        for(int i=0;i<n;i++){
-            printf("%i ",data[i]);
+        if (pos != i){
+            tukar = data[pos];
+            data[pos]=data[i];
+            data[i]=tukar;
+        }
+        printf("\n proses ke %i = ",i+1);
+        for(int i = 0; i <n;i++){
+            printf("%i",data[i]);
         }
     }
-    printf("\ndata hasil pengurutan dengan insertion sort = ");
-    for(i=0;i<n;i++){
-        printf("%i ",data[i]);
+    printf("\n data hasil pengurutan selesction sort : ");
+    for (i=0;i<n;i++){
+        printf("%i",data[i]); 
     }
 getch();
 }
